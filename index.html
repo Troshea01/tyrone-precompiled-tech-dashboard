@@ -1,0 +1,120 @@
+<html>
+    
+<head> <title> Vue JS</title>  
+    
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    
+</head>
+
+<header class="topBar"> <p>2018 Russia World Cup - Predictions </p>  </header>    
+    
+<body onload="initiate_cityData()">
+    
+    <div class="popCanvasContainer">    
+            <canvas id="popCanvas"> </canvas>
+        </div>
+
+
+
+        <div class="travelCanvasContainer">    
+            <canvas id="travelCanvas"> </canvas>
+        </div>
+
+
+    <div class="vue-dataContainer">
+    
+        <link rel="stylesheet" v-bind:href="cssURL">
+        
+        <div class="stats-panel">
+            
+            <div class="dataBlock db-type1 weatherData">
+                <h3>AVERAGE SCORE PREDICTIONS </h3>
+
+                <div v-bind:style="{ 'background-image': 'url(' + city_today_image + ')' }" class="weather-icon"> </div>
+
+                <p v-html="today_temp"> Weather Temp </p>
+
+                <p v-html="today_type"> Weather Type </p>
+                
+            </div>
+            
+            <div class="dataBlock db-type2 weatherData"> 
+                <div class="weatherCol"> 
+                    <div v-bind:style="{ 'background-image': 'url(' + foreimg1 + ')' }" class="weatherCol-icon"> </div>
+                    
+                        <p v-html="foreTemp1"> Weather Temp </p>
+                        <p v-html="foreType1"> Weather Type </p>
+                    
+                </div>
+                
+                <div class="weatherCol"> 
+                    <div v-bind:style="{ 'background-image': 'url(' + foreimg2 + ')' }" class="weatherCol-icon"> </div>
+                    
+                        <p v-html="foreTemp2"> Weather Temp </p>
+                        <p v-html="foreType2"> Weather Type </p>
+                    
+                </div>
+                
+                <div class="weatherCol"> 
+                    <div v-bind:style="{ 'background-image': 'url(' + foreimg3 + ')' }" class="weatherCol-icon"> </div>
+                    
+                        <p v-html="foreTemp3"> Weather Temp </p>
+                        <p v-html="foreType3"> Weather Type </p>
+                     
+                </div>
+                
+            </div>
+            
+            <div class="dataBlock db-type3"> 
+                <div v-bind:style="{ 'background-image': 'url(' + cityImage + ')' }" class="location-image"> 
+                    <h2 v-html="city_name"> City Name </h2>
+                </div>
+            </div>
+            
+            <div class="dataBlock db-type2 waterLevelData"> 
+            <h3>Average Prediction Levels </h3>
+            </div>
+            
+            <div class="dataBlock db-type1 cityPopData"> 
+                <h3> CITY POPULATION </h3>
+                <p v-html="city_pop">  </p>
+            </div>
+        </div>
+        
+        <div class="user-panel">
+            <center>
+                <div class="user-avatar"> </div>
+                <p> Enter you Email </p>
+                <input type="input" name="Email">
+                
+                <button> Login </button>
+                
+            </center>
+            
+        </div>
+
+        
+
+        
+
+        <div class="location-hover">
+
+               <div class="location_name-container"> 
+                   
+                    <p class="city-names" onclick="set_cityData(1)"> Russia </p>
+                    <p class="city-names" onclick="set_cityData(2)"> South Africa </p>
+                   
+                </div>
+
+            </div>
+    
+        </div>
+</body>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.js"></script>
+<script src="js/main.js"> </script>
+
+</html>
